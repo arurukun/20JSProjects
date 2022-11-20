@@ -5,7 +5,7 @@
 }
 
 :root{
-    --succsess-color: aqua;
+    --success-color: rgb(0, 13, 255);
     --error-color:rgb(255, 68, 0);
 }
 
@@ -62,7 +62,7 @@ h2{
 }
 
 .form-controll.success input{
-    border-color: var(--succsess-color);
+    border-color: var(--success-color);
 }
 
 .form-controll.error input{
@@ -82,8 +82,8 @@ h2{
 }
 
 .form button{
-    background-color: rgb(55, 125, 245);
-    border: 2px solid rgb(55, 125, 245);
+    background-color: rgb(0, 13, 255);
+    border: 2px solid rgb(0, 13, 255);
     border-radius: 4px;
     color: white;
     display: block;
