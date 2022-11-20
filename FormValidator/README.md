@@ -21,8 +21,21 @@
 | / es {3, } /     | esss / essss / esssss.....                      |
 | / es {5} /       | esssss                                          |
 | / \d /           | 0-9 any number is okay                          |
+| / ^ss /          | Starting with ss --> ssghs                      |
+| / ss$ /          | Ending with ss --> sadsfss                      |
 | /[ a-z ] /       | a-z any small alphabet is okay                  |
 | /[ A-Z ] /       | A-Z any capital alphabet is okay                |
 | / \[es\] {2} /   | \[es\] \[es\]                                   |
 | / \[es\] {2} /   | ee / es / se / ss                               |
 | / \[es\] {1,3} / | \[es\] or \[es\] \[es\] or \[es\] \[es\] \[es\] |
+
+## Examples
+
+### Example 1
+
+| / ^ ( \[a-zA-Z\d\\.\]{ 4,20 } ) @ (\[a-z\]{ 4,11 }) . (com) $ / | for checking Email         |
+| --------------------------------------------------------------- | -------------------------- |
+| Correct                                                         | arurukun@gmail.com         |
+| Correct                                                         | yuki.kawamoto1@example.com |
+| Wrong                                                           | kin@example.com            |
+| Wrong                                                           | kinkin@exa.com             |
