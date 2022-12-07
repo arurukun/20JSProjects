@@ -19,7 +19,6 @@ function updateSelectedCount(){
     // console.log(selectedSeats)
     // console.log([...selectedSeats])
     // console.log(seatIndex)
-    // console.log(seatIndex);
 
     localStorage.setItem("selectedSeat", JSON.stringify(seatIndex));
 
@@ -35,8 +34,8 @@ container.addEventListener("click", e =>{
         // console.log(e.target)i
         e.target.classList.toggle("selected");
 
-        updateSelectedCount();
     }
+    updateSelectedCount();
 })
 
 // for seat price

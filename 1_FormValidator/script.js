@@ -23,7 +23,7 @@ function showError(input,message){
  function checkEmail(input){
     // const re2 = /^([a-zA-Z]{5,15})$/;
     const re=/^([a-zA-Z\d\.]{1,10})@([a-zA-Z]{1,9}).(com)$/;
-    console.log("");
+    // console.log("");
     if(re.test(String(input.value).toLocaleLowerCase())){
         showSuccess(input);
     }else{
@@ -33,7 +33,7 @@ function showError(input,message){
 
 // show success outline
 function showSuccess(input){
-    const formControll=input.parentElement;
+    const formControll=input.v;
     formControll.className="form-controll success";
 }
 

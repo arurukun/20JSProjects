@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="script.js" defer></script>
+    <title>Exchange Rate</title>
+</head>
+<body class="flex flex-col items-center h-screen w-screen justify-around ">
+    <div>
+
+        <img src="./img/money.png" alt="" class="w-1/6 mt-8 mb-2 block mx-auto">
+        <h1 class="font-bold text-center text-5xl text-green-500">Exchange Rate Caluculator</h1>
+        <p class="my-2 text-center">Choose the currency and the amounts to get the exchange rate</p>
+    </div>
+    
+    <div class="container flex flex-col w-max h-40 justify-between">
+        <div class="currency">
+            <select id="currency-one" class="p-2 text-xl font-bold">
+                <option value="JPY" selected>JPY</option>
+                <option value="USD">USD</option>
+                <option value="AUD">AUD</option>
+                <option value="INR">INR</option>
+                <option value="VND">VND</option>
+                <option value="EUR">EUR</option>
+            </select>
+            <input type="number" id="amount-one" placeholder="0" value="1" class="text-xl text-right font-bold outline-none">
+        </div>
+
+        <div class="swap-rate-container flex flex-row justify-between">
+            <button id="swap" class="btn p-1 bg-green-500 text-white rounded-sm px-10 self-center">Swap</button>
+            <div class="flex flex-col">
+                <div id="rate" class="rate text-green-500"></div>
+                <div id="opp_rate" class="rate text-green-500"></div>
+            </div>
+        </div>
+
+        <div class="currency">
+            <select id="currency-two" class="p-2 text-xl font-bold">
+                <option value="JPY">JPY</option>
+                <option value="USD">USD</option>
+                <option value="AUD">AUD</option>
+                <option value="INR" selected>INR</option>
+                <option value="VND">VND</option>
+                <option value="EUR">EUR</option>
+            </select>
+            <input type="number" id="amount-two" placeholder="0" class="text-xl text-right font-bold outline-none">
+        </div>
+    </div>
+
+    <div>@Yukie.K</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
