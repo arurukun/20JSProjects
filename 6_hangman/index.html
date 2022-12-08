@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>HangMan</title>
+</head>
+<body class="bg-blue-600">
+    <h1 class="font-bold text-6xl">HangMan</h1>
+    <p class="hont-bold text-2xl">Find the hidden word - Enter the letter</p>
+    <div>
+        <svg class="stroke_c" width="200" height="250">
+            <!-- bar line -->
+            <line x1="60" y1="20" x2="120" y2="20" class="stroke-white"></line>
+            <line x1="120" y1="20" x2="120" y2="50" class="stroke-white"></line>
+            <line x1="60" y1="20" x2="60" y2="230" class="stroke-white"></line>
+            <line x1="20" y1="230" x2="100" y2="230" class="stroke-white"></line>
+            <!-- head -->
+            <circle cx="120" cy="70" r="20" class="hidden" />
+            <!-- body -->
+            <line x1="120" y1="90" x2="120" y2="150" class="stroke-white hidden"></line>
+            <!-- arms -->
+            <line x1="120" y1="90" x2="150" y2="110" class="stroke-white hidden"></line>
+            <line x1="120" y1="90" x2="90" y2="110" class="stroke-white hidden"></line>
+            <!-- legs -->
+            <line x1="120" y1="150" x2="100" y2="180" class="stroke-white hidden"></line>
+            <line x1="120" y1="150" x2="140" y2="180" class="stroke-white hidden"></line>
+        </svg>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
