@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <title>Generate Wealth</title>
+</head>
+<body>
+    <div class="flex flex-col items-center">
+        <h1 class="text-4xl text-purple-700 font-bold my-6">GENERATE WEALTH</h1>
+
+        <div class="flex h-60 bg-red-100 ">
+            <aside class="flex flex-col justify-between border-r border-black p-3">
+                <button id="add_user" class="border border-purple-500 text-purple-900 font-bold bg-red-100 hover:bg-purple-300 hover:text-purple-900 rounded-md">Add user</button>
+                <button id="dubble" class="border border-purple-500 text-purple-900 font-bold bg-red-100 hover:bg-purple-300 hover:text-purple-900 rounded-md">Dubble money</button>
+                <button id="show_millionaires" class="border border-purple-500 text-purple-900 font-bold bg-red-100 hover:bg-purple-300 hover:text-purple-900 rounded-md">Show only millionaires</button>
+                <button id="sort" class="border border-purple-500 text-purple-900 font-bold bg-red-100 hover:bg-purple-300 hover:text-purple-900 rounded-md">Sort by rechest</button>
+                <button id="calculate_wealth" class="border border-purple-500 text-purple-900 font-bold bg-red-100 hover:bg-purple-300 hover:text-purple-900 rounded-md">Calculate enter wealth</button>
+            </aside>
+        
+            <main id="main" class="p-3 min-w-[20rem]">
+                <h2 class="text-1xl border-b border-black flex justify-between">
+                    <strong >PARSON</strong>
+                    <div>WEALTH</div>
+                </h2>
+            </main>
+        </div>
+    
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
