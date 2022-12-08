@@ -4,3 +4,4 @@
 2. [Seat Booking](https://arurukun.github.io/20JSProjects/2_SeatBooking/)
 3. [video Player]
 4. [Exchange Rate](https://arurukun.github.io/20JSProjects/4_exchangeRate/)
+5. [Generate Wealth](https://arurukun.github.io/20JSProjects/5_generateWealth/)
