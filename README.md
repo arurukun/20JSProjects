@@ -5,3 +5,4 @@
 3. [video Player]
 4. [Exchange Rate](https://arurukun.github.io/20JSProjects/4_exchangeRate/)
 5. [Generate Wealth](https://arurukun.github.io/20JSProjects/5_generateWealth/)
+6. [(https://arurukun.github.io/20JSProjects/6_hungman/)]

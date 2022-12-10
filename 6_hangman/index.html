@@ -50,7 +50,14 @@
     <div id="popup-container" class="hidden">
         <div class="bg-green-600 flex flex-col items-center rounded-xl opacity-90 shadow-lg">
             <h2 id="final-message" class="text-3xl m-2">You have won</h2>
-            <button id="playAgain-btn" class="bg-white text-black m-2 p-1 rounded-md">Play Again</button>
+            <div class="flex flex-grow justify-around">
+                <button id="playAgain-btn" class="bg-white text-black m-2 p-1 rounded-md">Play Again</button>
+                <select name="" id="level-btn" class="bg-white text-black m-2 p-1 rounded-md">
+                    <option value="0.6">Easy</option>
+                    <option value="0.3" selected>Medium</option>
+                    <option value="0.1">Hard</option>
+                </select>
+            </div>
         </div>
     </div>
 

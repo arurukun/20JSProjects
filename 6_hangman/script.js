@@ -2,19 +2,19 @@ const word=document.getElementById("word")
 const wrongLetter=document.getElementById("wrong-letters")
 const finalMessage=document.getElementById("final-message")
 const popupContainer=document.getElementById("popup-container")
-const playAgainBtn=document.getElementById("playAgain-btn")
+const playBtn=document.getElementById("playAgain-btn")
 const notificationContainer=document.getElementById("notification-container")
-
 const strokePart=document.querySelectorAll(".stroke-white")
+const levelBtn=document.getElementById("level-btn")
 
 const words=["invasion","toddler","disoriented","deprivation"]
 
-const difficulty = 0.1
+let difficulty = levelBtn.value
 
 let selectedWord=words[Math.floor(Math.random() * words.length)]
 
-const correctLetters=selectedWord.split(``).filter(() => Math.random()<difficulty ? true : false)
-const wrongLetters=[]
+let correctLetters=selectedWord.split(``).filter(() => Math.random()<difficulty ? true : false)
+let wrongLetters=[]
 
 // show hidden word
 function displayWord(){
@@ -63,6 +63,7 @@ function updateWrongLetter(){
     ${wrongLetters}`
     // ${wrongLetters.map(wrongMoji=>`<span>${wrongMoji}</span>`)}`
 
+    // show notification
     strokePart.forEach((part,index)=>{
         if(index < wrongLetters.length){
             part.style.display="block"
@@ -70,6 +71,14 @@ function updateWrongLetter(){
             part.style.display="none"
         }
     })
+
+    // game over notification
+    if(strokePart.length == wrongLetters.length){
+        // console.log(strokePart.length, " ", wrongLetters.length)
+        // console.log(popupContainer.className)
+        popupContainer.className="text-white fixed top-0 left-0 w-screen h-screen justify-center items-center flex";
+        finalMessage.innerText="Oops!! Gomen nee! Game OVER!!";
+    }
 }
 
 // show notification
@@ -78,7 +87,20 @@ function notification(){
 
     setTimeout(()=>{
         notificationContainer.classList.add("hidden");
-    },200);
+    },2000);
 }
+
+playBtn.addEventListener("click",()=>{
+    wrongLetters=[];
+
+    selectedWord=words[Math.floor(Math.random()*words.length)]
+    difficulty=levelBtn.value
+
+    correctLetters=selectedWord.split("").filter(()=> Math.random() < difficulty ? true : false)
+
+    popupContainer.className='hidden'
+    updateWrongLetter();
+    displayWord()
+})
 
 displayWord()
