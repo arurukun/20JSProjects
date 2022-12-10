@@ -9,18 +9,18 @@
     <link rel="stylesheet" href="style.css">
     <title>HangMan</title>
 </head>
-<body class="bg-blue-600">
-    <h1 class="font-bold text-6xl">HangMan</h1>
-    <p class="hont-bold text-2xl">Find the hidden word - Enter the letter</p>
-    <div>
-        <svg class="stroke_c" width="200" height="250">
+<body class="bg-blue-600 flex flex-col items-center">
+    <h1 class="font-bold text-white text-6xl mb-4">HangMan</h1>
+    <p class="text-white text-2xl mb-4">Find the hidden word - Enter the letter</p>
+    <div class="flex">
+        <svg class="stroke_c " width="250" height="250">
             <!-- bar line -->
-            <line x1="60" y1="20" x2="120" y2="20" class="stroke-white"></line>
-            <line x1="120" y1="20" x2="120" y2="50" class="stroke-white"></line>
-            <line x1="60" y1="20" x2="60" y2="230" class="stroke-white"></line>
-            <line x1="20" y1="230" x2="100" y2="230" class="stroke-white"></line>
+            <line x1="60" y1="20" x2="120" y2="20" ></line>
+            <line x1="120" y1="20" x2="120" y2="50" ></line>
+            <line x1="60" y1="20" x2="60" y2="230" ></line>
+            <line x1="20" y1="230" x2="100" y2="230" ></line>
             <!-- head -->
-            <circle cx="120" cy="70" r="20" class="hidden" />
+            <circle cx="120" cy="70" r="20" class="stroke-white hidden" />
             <!-- body -->
             <line x1="120" y1="90" x2="120" y2="150" class="stroke-white hidden"></line>
             <!-- arms -->
@@ -30,6 +30,32 @@
             <line x1="120" y1="150" x2="100" y2="180" class="stroke-white hidden"></line>
             <line x1="120" y1="150" x2="140" y2="180" class="stroke-white hidden"></line>
         </svg>
+        
+        <div class="mt-4">
+            <div id="wrong-letters" class="flex flex-col items-end">
+                <p class="text-sm text-red-700 hidden">Wrong</p>
+                <span class="text-2xl font-bold text-red-700 hidden">e,r,t,y,</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="word" class="flex mt-4">
+        <div class="letter border-b mx-1 w-5 text-4xl flex justify-center">h</div>
+        <div class="letter border-b mx-1 w-5 text-4xl flex justify-center">e</div>
+        <div class="letter border-b mx-1 w-5 text-4xl flex justify-center">l</div>
+        <div class="letter border-b mx-1 w-5 text-4xl flex justify-center">l</div>
+        <div class="letter border-b mx-1 w-5 text-4xl flex justify-center">o</div>
+    </div>
+
+    <div id="popup-container" class="hidden">
+        <div class="bg-green-600 flex flex-col items-center rounded-xl opacity-90 shadow-lg">
+            <h2 id="final-message" class="text-3xl m-2">You have won</h2>
+            <button id="playAgain-btn" class="bg-white text-black m-2 p-1 rounded-md">Play Again</button>
+        </div>
+    </div>
+
+    <div id="notification-container" class="p-2 bg-red-700 text-white rounded-md opacity-85 absolute bottom-12 hidden">
+        <p>You have already entered this letter</p>
     </div>
 
     <script src="script.js"></script>
