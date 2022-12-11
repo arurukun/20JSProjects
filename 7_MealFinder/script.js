@@ -1,13 +1,13 @@
 const submit=document.getElementById("submit");
 const search=document.getElementById("search");
 const randomBtn=document.getElementById("random-btn");
-const searchHeading=document.getElementById("serch-heading");
+const searchHeading=document.getElementById("search-heading");
 const meals=document.getElementById("meals");
 const singleMeal=document.getElementById("single-meal");
 
-https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
+// https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
 
-function searchMeal(e){
+async function searchMeal(e){
     e.preventDefault();
     
     singleMeal.innerHTML="";
@@ -17,6 +17,27 @@ function searchMeal(e){
 
     // empty and show arror
     if(searching.trim()){
+        const {data}=await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searching}`)
+        
+        searchHeading.innerHTML=`<div class="text-1xl mt-5">Search result for "${searching}"</div>`
+        
+        if(data.meals === null){
+            searchHeading.innerHTML=`<div class="text-1xl mt-5">There are no search result.Try again!</div>`
+        }else{
+
+            
+            meals.innerHTML=
+            `<div class="grid grid-cols-2 gap-4">
+                ${data.meals.map(meal=>`
+                <div class="w-48 h-48 mt-8 bg-[url(${meal.strMealThumb})] bg-cover border border-grey-400">
+                    <div class="hover:bg-[rgba(0,0,0,0.4)] bg-[rgba(0,0,0,0.7)] h-full w-full flex justify-center items-center transition">
+                        <h3 class="text-white">${meal.strMeal}</h3>
+                    </div>
+                </div>
+                `).join('')}
+            </div>`
+            console.log(data.meals[0].strMealThumb)
+        }
         
     }else{alert("Please enter a search term")}
 }
