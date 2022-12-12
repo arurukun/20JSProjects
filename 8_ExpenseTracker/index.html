@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <div class="min-w-screen min-h-screen flex flex-col justify-around items-center bg-yellow-100">
+        <h2 class="text-2xl">Expense Tracker</h2>
+        
+        <div class="flex flex-col  justify-center items-start ">
+            <h4 class="text-md">Your Balance</h4>
+            <h1 id="balance" class="text-3xl mb-3">¥0,000</h1>
+            
+            <div class="flex bg-white shadow-xl">
+                <div class="px-10 pt-0 pb-1 m-3">
+                    <h4 class="text-green-600">Income</h4>
+                    <p id="money-plus">+¥10,000</p>
+                </div>
+                <div class="px-10 pt-0 pb-1 m-3 border-l border-grat-600">
+                    <h4 class="text-red-600">Expense</h4>
+                <p id="money-minus">-¥10,000</p>
+            </div>
+        </div>
+        
+        <div class="w-full h-full">
+            <h3 class="my-3 mr-4 ml-0 border-b border-black">HIstory</h3>
+        </div>
+        <ul id="list" class="w-full">
+            <li class="p-4 my-2 bg-white flex justify-between border-r-4 border-red-600 shadow-xl">Cash<button><span>-¥10,000</span>;</button></li>
+        </ul>
+        
+        <div class="w-full h-full">
+            <h3 class="my-3 mr-4 ml-0 border-b border-black">New Transaction</h3>
+        </div>
+        <form id="form" class="flex flex-col w-full">
+            <div class="flex flex-col">
+                <label for="">Taxt</label>
+                <input type="text" name="" id="text" placeholder="Enter Text" class="p-2 my-2 bg-white">
+            </div>
+            <div class="flex flex-col">
+                <label for="">Amount <br>(negative - expense , positive + income)</label>
+                <input type="number" placeholder="Enter Amount" class="p-2 my-2 bg-white">
+            </div>
+            <button class="bg-yellow-400 text-black p-1">Add Transaction</button>
+        </form>
+
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
