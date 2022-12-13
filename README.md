@@ -7,3 +7,4 @@
 5. [Generate Wealth](https://arurukun.github.io/20JSProjects/5_generateWealth/)
 6. [HungMan](https://arurukun.github.io/20JSProjects/6_hungman/)
 7. [Meal Finder](https://arurukun.github.io/20JSProjects/7_MealFinder/)
+8. [Expense Tracker](https://arurukun.github.io/20JSProjects/8_ExpenseTracker/)
