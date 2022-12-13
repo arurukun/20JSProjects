@@ -13,17 +13,26 @@ const dummyTransactionL=[
     {id:4,text:"food",amount:-20000}
 ]
 
-const transaction=dummyTransactionL
+// console.log(dummyTransactionL)
+console.log(JSON.stringify(dummyTransactionL))
+console.log(JSON.parse(JSON.stringify(dummyTransactionL)))
 
-function addTransaction(transaction){
-    const sign=transaction.amount < 0 ? "-" : "+";
+let transaction= localStorage.getItem("saving") ? JSON.parse(localStorage.getItem("saving")) : []
+
+
+// create one history
+function addTransaction(transactionM){
+    const sign=transactionM.amount < 0 ? "-" : "+";
     const item=document.createElement("li")
 
     item.className="p-4 my-2 bg-white flex justify-between border-r-4 shadow-xl"
-    item.classList.add(transaction.amount < 0 ? "border-red-600" : "border-green-600")
-    item.innerHTML=`${transaction.text}<div class="flex space-x-2">
-        <span>${sign}${Math.abs(transaction.amount)}</span>
-        <button class="bg-red-200 hover:bg-red-300 rounded-sm transition px-1.5 py-0 border border-black">x</button>
+    item.classList.add(transactionM.amount < 0 ? "border-red-600" : "border-green-600")
+    item.innerHTML=`${transactionM.text}
+    <div class="flex space-x-2">
+        <span>${sign}${Math.abs(transactionM.amount)}</span>
+        <button 
+        class="bg-red-200 hover:bg-red-300 rounded-sm transition px-1.5 py-0 border border-black" 
+        onclick="removeEachItem(${transactionM.id})">x</button>
     </div></li>`
 
     list.appendChild(item);
@@ -32,10 +41,11 @@ function addTransaction(transaction){
 
 function init(){
     list.innerHTML="";
-    transaction.forEach(addTransaction)
+    transaction.forEach((item)=>{addTransaction(item)})
     updataValue()
 }
 
+// show all into the history
 function updataValue(){
     const amounts=transaction.map(item=>item.amount)
 
@@ -73,7 +83,7 @@ form.addEventListener("submit",(e)=>{
     transaction.push(eachItem)
     addTransaction(eachItem)
     updataValue()
-    console.log(eachItem)
+     localStorage.setItem("saving",JSON.stringify(transaction))
 
     text.value="";
     amount.value=""
@@ -82,6 +92,12 @@ form.addEventListener("submit",(e)=>{
 function createId(){
     return Math.floor(Math.random()*100000000)
 }
-console.log(createId)
+
+function removeEachItem(eachId){
+    transaction=transaction.filter(item => item.id !== eachId)
+    init()
+    localStorage.setItem("saving",JSON.stringify(transaction))
+
+}
 
 init()
