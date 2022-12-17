@@ -18,7 +18,7 @@ let wrongLetters=[]
 
 // show hidden word
 function displayWord(){
-    word.innerHTML=`${selectedWord.split(``).map((moji) => {
+    word.innerHTML=`${selectedWord.split(``).map((moji)=> {
         return `<div class="letter border-b mx-1 w-5 text-xl flex justify-center">${correctLetters.includes(moji) ? moji : ""}</div>`
     }).join("")}`
     

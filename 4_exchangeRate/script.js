@@ -39,13 +39,13 @@ function setData(){
     amount_one.value=selectedRate.ao
 }
 
-const change = "change"
-currency_one.addEventListener(change,
-(e)=>{ 
-    calculate(); 
-    console.log(e);
-}
-);
+// const change = "change"
+// currency_one.addEventListener("change",
+// (e)=>{ 
+//     calculate(); 
+//     console.log(e);
+// }
+// );
 currency_one.addEventListener("change", calculate);
 amount_one.addEventListener("input",calculate);
 currency_two.addEventListener("change",calculate);
