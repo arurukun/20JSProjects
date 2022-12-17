@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+    <title>Game Typing</title>
+</head>
+<body>
+    <div class="h-screen ">
+        <div class="flex flex-row items-center h-16 justify-center bg-blue-800">
+            <button id="setting-btn" class="mr-20 text-white">
+                <i class="fas fa-cog"></i>
+            </button>
+            
+            <div id="setting" class="bg-blue-200">
+                <form action="setting-form">
+                    <div>
+                        <label for="" class="px-3">Difficulty</label>
+                        <select name="" id="difficulty" class="px-8">
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>        
+                    </div>
+                </form>
+            </div>
+        </div>
+            
+        <div id="container" class="flex flex-col justify-center items-center min-h-[28rem] ">
+            <div class=" bg-blue-800 text-white mx-auto w-3/5 h-60 md:w-2/5 flex flex-col justify-around items-center relative rounded-md">
+                <div>
+                    <h2 class="p-2 px-10 md:px-40 my-4 bg-blue-300 rounded-sm">Speed Typer</h2>
+                </div>
+                <small class="-mb-4">Type the following</small>
+                
+                <h1 id="word" class="font-bold text-2xl"></h1>
+                <input type="text" id="text" class="p-1.5 px-4 md:px-12" autocomplete="on" placeholder="Type the word here">
+                
+                <p id="time-container" class="absolute top-16 left-2 mt-4">Time left: <span id="time" class="">10s</span></p>
+                <p id="score-container" class="absolute top-16 right-2 mt-4">Time left: <span id="score" >0</span></p>
+                
+                <div id="end-game-container"></div>
+            </div>
+        </div>
+        
+    </div>
+
+        <script src="script.js"></script>
+    </body>
+    </html>
