@@ -25,10 +25,17 @@ let randomWord;
 let scores=0;
 let times=10;
 
+
+
 // cursor put on at start
 text.focus();
 
 const timeInterval=setInterval(setTime,1000);
+
+let difficultLevel=localStorage.getItem("saving") ? localStorage.getItem("saving") : "medium";
+difficulty.value=difficultLevel
+// console.log(difficulty.value)
+
 
 function getRandomWord(){
     randomWord=words[Math.floor(Math.random()* words.length)]
@@ -42,10 +49,18 @@ text.addEventListener("input",e=>{
 
     if(insertedWord == randomWord){
         e.target.value=""
-        console.log(insertedWord)
+        // console.log(insertedWord)
         getRandomWord();
         scores++
         score.innerText=scores;
+        if(difficulty.value === "hard"){
+            times+=1
+            console.log("yuki")
+        }else if(difficulty.value === "medium"){
+            times+=2
+        }else{
+            times+=3
+        }
     }
 })
 
@@ -55,10 +70,27 @@ function setTime(){
 
     if(times === 0){
         clearInterval(timeInterval);
-        const gameOver=()=>{
-
-        }
+        endGameContainer.innerHTML=`
+            <div class="flex flex-col  items-center">
+                <h1 class="text-2xl font-bold mb-4">TIME RAN OUT</h1>
+                <p>Your final score is ${scores}</p>
+                <button onclick="location.reload()" class="p-3 bg-blue-800 mt-4">RELOAD</button>
+            </div>
+        `
+        endGameContainer.style.display="flex";
     }
 }
+
+
+settingBtn.addEventListener("click",e=>{
+    setting.classList.toggle("hidden")
+})
+
+difficulty.addEventListener("change",e=>{
+    difficultLevel=e.target.value;
+    localStorage.setItem("saving",difficultLevel);
+    // console.log(difficultLevel)
+})
+
 
 getRandomWord()
