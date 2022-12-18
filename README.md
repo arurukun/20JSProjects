@@ -9,3 +9,4 @@
 7. [Meal Finder](https://arurukun.github.io/20JSProjects/7_MealFinder/)
 8. [Expense Tracker](https://arurukun.github.io/20JSProjects/8_ExpenseTracker/)
 9. [Scroll Postd](https://arurukun.github.io/20JSProjects/9_scrollPosts/)
+10. [Game Typing](https://arurukun.github.io/20JSProjects/10_GameTyping/)
